@@ -8,6 +8,7 @@
 #include "linux-gui.h"
 #include "main.h"
 #include "video_render.h"
+#include "avi.h"
 
 int winsizex, winsizey;
 int videoresize = 0;
