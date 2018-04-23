@@ -58,8 +58,6 @@ struct avi_handle
   Uint8    rledata[640*512*4];
   Uint8    lastframe[640*512];
 
-  // This is an int instead of SDL_bool because we use bit 1 for optimisation purposes
-  // (matches the oric 50hz bit)
   int is50hz;
 };
 
