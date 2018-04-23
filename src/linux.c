@@ -84,6 +84,8 @@ int main(int argc, char *argv[])
         {
                 main_run();
                 if (key[KEY_F11]) gui_enter();
+                if (key[KEY_F2]) video_capture_start();
+                if (key[KEY_F3]) video_capture_end();
                 if (key[KEY_ALT] && key[KEY_ENTER] && fullscreen && !oldf)
                 {
                         fullscreen = 0;

@@ -66,6 +66,9 @@
 int autoboot=0;
 int joybutton[2];
 
+struct avi_handle *vidcap = NULL;
+int do_video_capture = 0;
+
 int printsec;
 void secint()
 {

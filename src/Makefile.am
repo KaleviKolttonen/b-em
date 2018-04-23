@@ -14,13 +14,13 @@ amrefresh:
 #   INCLUDE_DEBUGGER - include the cpu_debug implementation
 # USE_MEMORY_POINTER - do not assume Co Pro memory starts at address 0
 
-b_em_CFLAGS = $(allegro_CFLAGS) -DBEM -DINCLUDE_DEBUGGER -DUSE_MEMORY_POINTER
+b_em_CFLAGS = $(allegro_CFLAGS) -DBEM -DINCLUDE_DEBUGGER -DUSE_MEMORY_POINTER -I/usr/include/SDL
 
 # workaround for Win32 Allegro, which has `allegro-config' missing
 if OS_WIN
 b_em_LDADD = -lalleg -lz -lopenal -lalut -lm
 else
-b_em_LDADD = $(allegro_LIBS) -lz -lopenal -lalut -lm -lpthread
+b_em_LDADD = $(allegro_LIBS) -lz -lopenal -lalut -lm -lpthread -lSDL
 endif
 
 b_em_SOURCES = \
@@ -40,6 +40,7 @@ b_em_SOURCES = \
 	acia.c \
 	adc.c \
 	arm.c \
+	avi.c \
 	darm/darm.c \
 	darm/darm-tbl.c \
 	darm/armv7.c \

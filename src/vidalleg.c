@@ -192,6 +192,11 @@ void video_doblit()
         }
     }
 
+    if (do_video_capture) {
+         /* How to feed data to avi_addframe() like Oricutron does??? */
+         avi_addframe(&vidcap, &ram[0x3000]);
+    }
+
     fskipcount++;
     if (fskipcount >= ((motor && fasttape) ? 5 : vid_fskipmax)) {
         lasty++;
